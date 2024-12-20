@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Employee Management System</h1>
+    </header>
+
+    <div class="controls">
+      <button id="addEmployeeBtn">Add Employee</button>
+      <select id="statusFilter">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="on-leave">On Leave</option>
+      </select>
+    </div>
+
+    <div id="employeeListing" class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+          <!-- Employee rows will be populated here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="employeeDetails" class="details-container hidden">
+      <button class="back-btn" onclick="goBackToListing()">Back to List</button>
+      <div id="employeeInfo">
+        <!-- Employee details will be shown here -->
+      </div>
+    </div>
+
+    <div id="addEmployeeScreen" class="add-employee-form hidden">
+      <h2>Add New Employee</h2>
+      <form id="addEmployeeForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="position">Position</label>
+        <input type="text" id="position" required>
+        <label for="status">Status</label>
+        <select id="status" required>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="on-leave">On Leave</option>
+        </select>
+        <button type="submit">Add Employee</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
